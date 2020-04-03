@@ -17,4 +17,5 @@ jobs:
           headless: true
           parallel: true
           group: 'Actions example'
+          record: true
           
