@@ -1,5 +1,8 @@
-name: E2E
-on: [push]
+name: Nightly
+on: 
+  schedule:
+   - cron:  '0 0 * * *'
+
 jobs:
   chrome:
     runs-on: ubuntu-latest
