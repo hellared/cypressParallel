@@ -22,8 +22,6 @@ jobs:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   firefox:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node12.16.1-chrome80-ff73
     steps:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v1
