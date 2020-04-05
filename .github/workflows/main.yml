@@ -25,9 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v1
-      - run: npx cypress info
         with:
           browser: edge
           record: true
+      - run: npx cypress info
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}          
