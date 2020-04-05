@@ -20,3 +20,25 @@ jobs:
           record: true
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  firefox:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node12.16.1-chrome80-ff73
+      options: --user 1001
+    strategy:
+      matrix:
+        # the actual items in the array do not matter,
+        # just the number - to force CI to sping 2 copies
+        # of the current job in parallel
+        machines: [1, 2]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: cypress-io/github-action@v1
+        with:
+          browser: firefox
+          headless: true
+          parallel: true
+          group: 'Actions example'
+          record: true
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}    
