@@ -20,14 +20,3 @@ jobs:
           record: true
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-  firefox:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v1
-        with:
-          browser: firefox
-          headless: true
-          record: true
-    env:
-      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}    
