@@ -28,8 +28,6 @@ jobs:
         with:
           browser: firefox
           headless: true
-          parallel: true
-          group: 'Actions example'
           record: true
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}    
