@@ -20,14 +20,3 @@ jobs:
           record: true
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-  edge:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v1
-        with:
-          browser: edge
-          record: true
-      - run: npx cypress info
-    env:
-      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}          
