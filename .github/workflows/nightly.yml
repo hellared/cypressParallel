@@ -4,13 +4,16 @@ on:
    - cron:  0 0 * * *
 jobs:
   firefox:
-    runs-on: ubuntu-latest
-    steps:
+     runs-on: ubuntu-latest
+     container:
+      image: cypress/browsers:node12.13.0-chrome80-ff74
+      options: --user 1001
+     steps:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v1
         with:
           browser: firefox
           headless: true
           record: true
-    env:
+     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }} 
